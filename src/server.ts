@@ -34,13 +34,13 @@ app.use("/api/users", userRouter);
 app.use("/api/orders", orderRouter);
 
 // express va a servir los archivos estaticos de la carpeta public
-app.use(express.static('public'));
+// app.use(express.static('public'));
 
 // Cualquier otra solicitud get que no se controle/maneje entrara en esta parte y entregara el index.html
 // __dirname: direccion de este archivo(server.ts)
-app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
-})
+// app.get("*", (req, res) => {
+//     res.sendFile(path.join(__dirname, 'public', 'index.html'));
+// })
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
